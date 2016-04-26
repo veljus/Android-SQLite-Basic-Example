@@ -18,11 +18,12 @@ public class MySQLiteAdapter  {
         ContentValues contentValues = new ContentValues();
         contentValues.put(MySQLiteHelper.FIRST_ROW,name);
         long id = db.insert(MySQLiteHelper.TABLE_NAME,null,contentValues);
+        db.close();
         return id;
     }
      static class MySQLiteHelper extends SQLiteOpenHelper {
           private static final String DB_NAME = "exampledb";
-          private static final int DB_VERSION = 1;
+          private static final int DB_VERSION = 2;
           private static final String TABLE_NAME = "MOJATABELA";
           private static final String UID="_id";
           private static final String FIRST_ROW ="Imekorisnika";
