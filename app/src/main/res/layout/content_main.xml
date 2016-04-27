@@ -16,7 +16,51 @@
         android:text="Write data"
         android:id="@+id/btnWrite"
         android:onClick="doWrite"
+        android:layout_below="@+id/textAddr"
+        android:layout_alignLeft="@+id/textAddr"
+        android:layout_alignStart="@+id/textAddr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name:"
+        android:id="@+id/textName"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/editName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:id="@+id/editName"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:layout_toRightOf="@+id/btnWrite"
+        android:layout_toEndOf="@+id/btnWrite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Addr:"
+        android:id="@+id/textAddr"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/editAddr"
+        android:layout_alignRight="@+id/textName"
+        android:layout_alignEnd="@+id/textName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/editAddr"
+        android:layout_below="@+id/textName"
+        android:layout_alignLeft="@+id/editName"
+        android:layout_alignStart="@+id/editName" />
+
 </RelativeLayout>
