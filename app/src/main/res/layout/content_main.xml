@@ -73,4 +73,14 @@
         android:layout_alignLeft="@+id/editAddr"
         android:layout_alignStart="@+id/editAddr" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete ALL"
+        android:id="@+id/btnDeleteAll"
+        android:onClick="deleteAllData"
+        android:layout_alignTop="@+id/btnAllData"
+        android:layout_toRightOf="@+id/btnAllData"
+        android:layout_toEndOf="@+id/btnAllData" />
+
 </RelativeLayout>

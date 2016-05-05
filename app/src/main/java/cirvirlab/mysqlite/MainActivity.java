@@ -56,4 +56,9 @@ public class MainActivity extends Activity {
         String allData = helper.readAllData();
         Message.message(this,allData);
     }
+
+    public void deleteAllData(View view) {
+        int count_deleted = helper.deleteallRows();
+        Message.message(this," " + count_deleted);
+    }
 }

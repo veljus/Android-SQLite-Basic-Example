@@ -32,6 +32,12 @@ public class MySQLiteAdapter  {
         }
         return stringBuffer.toString();
     }
+    public int deleteallRows(){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String[] whereArgs = {"0"};
+        int count_deleted =  db.delete(MySQLiteHelper.TABLE_NAME,MySQLiteHelper.UID + " > ?", whereArgs);
+        return count_deleted;
+    }
     public long insertData(String name, String address){
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
