@@ -17,8 +17,8 @@
         android:id="@+id/btnWrite"
         android:onClick="doWrite"
         android:layout_below="@+id/textAddr"
-        android:layout_alignLeft="@+id/textAddr"
-        android:layout_alignStart="@+id/textAddr" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,5 +62,15 @@
         android:layout_below="@+id/textName"
         android:layout_alignLeft="@+id/editName"
         android:layout_alignStart="@+id/editName" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Data"
+        android:id="@+id/btnAllData"
+        android:onClick="showAllData"
+        android:layout_alignTop="@+id/btnWrite"
+        android:layout_alignLeft="@+id/editAddr"
+        android:layout_alignStart="@+id/editAddr" />
 
 </RelativeLayout>

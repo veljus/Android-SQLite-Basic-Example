@@ -51,4 +51,9 @@ public class MainActivity extends Activity {
 
         }
     }
+
+    public void showAllData(View view) {
+        String allData = helper.readAllData();
+        Message.message(this,allData);
+    }
 }

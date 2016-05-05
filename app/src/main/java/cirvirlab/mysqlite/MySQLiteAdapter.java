@@ -3,6 +3,7 @@ package cirvirlab.mysqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,6 +13,24 @@ public class MySQLiteAdapter  {
     MySQLiteHelper helper;
     public MySQLiteAdapter(Context context){
         helper = new MySQLiteHelper(context);
+    }
+    public String readAllData(){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String column[] = {MySQLiteHelper.UID,MySQLiteHelper.FIRST_ROW,MySQLiteHelper.SECOND_ROW};
+        Cursor cursor = db.query(MySQLiteHelper.TABLE_NAME,column,null,null,null,null,null);
+        StringBuffer stringBuffer = new StringBuffer();
+
+        while (cursor.moveToNext())
+        {
+            int index_id = cursor.getColumnIndex(MySQLiteHelper.UID);
+            int index_first_row = cursor.getColumnIndex(MySQLiteHelper.FIRST_ROW);
+            int index_second_row = cursor.getColumnIndex(MySQLiteHelper.SECOND_ROW);
+            String name = cursor.getString(index_first_row);
+            String addr = cursor.getString(index_second_row);
+            int cursor_id = cursor.getInt(index_id);
+            stringBuffer.append(cursor_id + " " + name + " " + addr + " " + "\n");
+        }
+        return stringBuffer.toString();
     }
     public long insertData(String name, String address){
         SQLiteDatabase db = helper.getWritableDatabase();
