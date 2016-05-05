@@ -83,4 +83,14 @@
         android:layout_toRightOf="@+id/btnAllData"
         android:layout_toEndOf="@+id/btnAllData" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/btnUpdate"
+        android:onClick="updateWhatTakes"
+        android:layout_below="@+id/btnWrite"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

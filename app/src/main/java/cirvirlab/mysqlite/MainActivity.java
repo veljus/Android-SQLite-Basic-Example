@@ -61,4 +61,9 @@ public class MainActivity extends Activity {
         int count_deleted = helper.deleteallRows();
         Message.message(this," " + count_deleted);
     }
+
+    public void updateWhatTakes(View view) {
+        int count_updated = helper.updateRow("Vladan Bujas","VLADAN BUJAS");
+        Message.message(this," " + count_updated);
+    }
 }

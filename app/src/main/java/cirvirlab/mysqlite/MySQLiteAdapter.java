@@ -32,6 +32,15 @@ public class MySQLiteAdapter  {
         }
         return stringBuffer.toString();
     }
+    public int updateRow(String oldName, String newName) {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MySQLiteHelper.FIRST_ROW, newName);
+        String[] whereArgs = {oldName};
+        int count_updated = db.update(MySQLiteHelper.TABLE_NAME,contentValues,MySQLiteHelper.FIRST_ROW + " = ? " , whereArgs);
+        return count_updated;
+
+    }
     public int deleteallRows(){
         SQLiteDatabase db = helper.getWritableDatabase();
         String[] whereArgs = {"0"};
